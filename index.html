@@ -695,7 +695,7 @@ window.addEventListener('pagehide',saveState);
    try{navigator.clipboard.writeText(code).then(done,fail)}catch(e){fail()}});}
 document.getElementById('twkBtn').addEventListener('click',()=>{el.twk.checked=!el.twk.checked;el.twk.dispatchEvent(new Event('change'))});
 window.claude?.hot?.snapshot?.(()=>collectState());
-const DEFAULT_STATE={"t":77273,"labels":false,"trails":true,"grid":false,"faint":true,"all":false,"stars":true,"cons":false,"ov":true,"peaks":false,"geo":false,"twk":true,"zoomIn":true,"beauty":"44","lim":"4.3","ridge":"1.03","ovOp":"40","speed":"15","twkAmt":"96"}; // baked-in starting settings for the website version
+const DEFAULT_STATE={"t":77273,"labels":false,"trails":true,"grid":false,"faint":true,"all":false,"stars":true,"cons":false,"ov":true,"peaks":false,"geo":false,"twk":true,"zoomIn":false,"beauty":"44","lim":"4.3","ridge":"1.03","ovOp":"40","speed":"15","twkAmt":"96"}; // baked-in starting settings for the website version
 function startWith(data){let st=data&&Object.keys(data).length?data:null;if(!st){try{st=JSON.parse(localStorage.getItem(SKEY)||'null')}catch(e){st=null}}if(!st)st=DEFAULT_STATE;resize();applyState(st);draw()}
 if(window.claude?.hot?.ready) window.claude.hot.ready(startWith); else startWith(window.claude?.hot?.data ?? {});
 })();
